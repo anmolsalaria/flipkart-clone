@@ -18,7 +18,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
@@ -35,7 +35,7 @@
 
 ---
 
-## ✨ Features
+## Features
 
 | Category | Features |
 |----------|----------|
