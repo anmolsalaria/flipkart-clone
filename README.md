@@ -48,7 +48,7 @@
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -79,7 +79,7 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 flipkart-clone/
@@ -144,7 +144,7 @@ flipkart-clone/
 
 ---
 
-## 🗃 Database Schema
+## Database Schema
 
 ### Entity-Relationship Diagram
 
@@ -175,7 +175,7 @@ orders   ──< order_items       (1:N — one order contains many line items)
 
 ---
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Products
 
@@ -215,7 +215,7 @@ orders   ──< order_items       (1:N — one order contains many line items)
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -283,7 +283,7 @@ Navigate to **http://localhost:5173** and start browsing!
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 ### Backend (`backend/.env`)
 
@@ -305,7 +305,7 @@ VITE_API_URL=http://localhost:5001/api
 
 ---
 
-## 🔄 Application Flows
+## Application Flows
 
 ### Cart Flow
 
@@ -340,7 +340,7 @@ User fills shipping form → POST /api/orders
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 <p align="center"><em>Screenshots will be added after deployment</em></p>
 
@@ -356,7 +356,7 @@ User fills shipping form → POST /api/orders
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 ### Frontend → Vercel / Netlify
 
@@ -381,7 +381,7 @@ npm run build     # Outputs to dist/
 
 ---
 
-## 🎨 UI/UX Highlights
+## UI/UX Highlights
 
 - ✅ Flipkart-style blue navbar with logo, search bar, and cart badge
 - ✅ Responsive grid layout (1 / 2 / 3 / 4 columns based on viewport)
@@ -398,7 +398,7 @@ npm run build     # Outputs to dist/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -408,7 +408,7 @@ npm run build     # Outputs to dist/
 
 ---
 
-## 📝 License
+## License
 
 This project is built for **educational and internship assessment purposes**.
 
