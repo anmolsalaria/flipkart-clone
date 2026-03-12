@@ -58,7 +58,9 @@ export default function Home() {
     setLoading(true);
     const params = { page: pagination.page, limit };
     if (searchQuery) params.search = searchQuery;
-    if (activeCategory) params.category = activeCategory;
+    if (activeCategory && activeCategory !== "All") {
+  params.category = activeCategory;
+}
 
     fetchProducts(params)
       .then(({ data }) => {
