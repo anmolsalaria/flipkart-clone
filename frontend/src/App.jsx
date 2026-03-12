@@ -22,6 +22,7 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import OrderSuccess from './pages/OrderSuccess';
 import Wishlist from './pages/Wishlist';
+import Orders from './pages/Orders';
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/order-success/:id" element={<OrderSuccess />} />
                 <Route path="/wishlist" element={<Wishlist />} />
+                <Route path="/orders" element={<Orders />} />
               </Routes>
             </main>
           </div>
