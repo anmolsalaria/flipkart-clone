@@ -358,26 +358,76 @@ User fills shipping form → POST /api/orders
 
 ## Deployment
 
-### Frontend → Vercel / Netlify
+The application is deployed across two platforms with a cloud-hosted MySQL database.
 
-```bash
-cd frontend
-npm run build     # Outputs to dist/
+| Layer | Platform | URL |
+|-------|----------|-----|
+| **Frontend** | Vercel | https://flipkart-clone-three-lime.vercel.app |
+| **Backend API** | Railway | https://flipkart-clone-production.up.railway.app |
+| **Database** | Railway MySQL | Managed by Railway |
+
+---
+
+### Frontend — Vercel
+
+The React frontend is deployed on **Vercel** with automatic deployments on every push to `main`.
+
+**Build configuration in Vercel dashboard:**
+
+| Setting | Value |
+|---------|-------|
+| Framework Preset | Vite |
+| Root Directory | `frontend` |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+
+**Environment variable (set in Vercel project settings):**
+
+```env
+VITE_API_URL=https://flipkart-clone-production.up.railway.app/api
 ```
 
-- Set `VITE_API_URL` to your deployed backend URL
-- Deploy the `dist/` folder
+---
 
-### Backend → Render / Railway
+### Backend — Railway
 
-- Set all `DB_*` environment variables to your cloud MySQL credentials
-- Set `CLIENT_URL` to your deployed frontend URL
-- Start command: `npm start`
+The Express API is deployed on **Railway** with automatic deployments on every push to `main`.
 
-### Database → PlanetScale / AWS RDS / Railway MySQL
+**Start command:**
 
-- Run the seed scripts against your cloud database
-- Update `DB_HOST`, `DB_USER`, `DB_PASSWORD` accordingly
+```bash
+npm start
+```
+
+**Environment variables (set in Railway service variables):**
+
+```env
+PORT=5001
+DB_HOST=<railway-mysql-host>
+DB_PORT=<railway-mysql-port>
+DB_USER=<railway-mysql-user>
+DB_PASSWORD=<railway-mysql-password>
+DB_NAME=flipkart_clone
+CLIENT_URL=https://flipkart-clone-three-lime.vercel.app
+```
+
+> Railway automatically injects `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME` when you link a MySQL plugin to your service. You only need to set `CLIENT_URL` manually.
+
+---
+
+### Database — Railway MySQL
+
+The MySQL database is provisioned as a **Railway MySQL plugin** linked directly to the backend service.
+
+**Initial setup (run once after provisioning):**
+
+```bash
+# Connect to Railway MySQL using the connection string from your Railway dashboard
+mysql -h <DB_HOST> -P <DB_PORT> -u <DB_USER> -p<DB_PASSWORD> <DB_NAME> < backend/seed/seedProducts.sql
+mysql -h <DB_HOST> -P <DB_PORT> -u <DB_USER> -p<DB_PASSWORD> <DB_NAME> < backend/seed/seedMore.sql
+```
+
+This seeds the production database with **100 products** and **257 images** across 6 categories.
 
 ---
 
